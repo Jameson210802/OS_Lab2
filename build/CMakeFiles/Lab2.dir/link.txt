@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -O0 -Wall -Wextra -pedantic -rdynamic -Wl,--dependency-file=CMakeFiles/Lab2.dir/link.d CMakeFiles/Lab2.dir/src/main.cpp.o -o Lab2  -Wl,-rpath,/home/janderson.linux/Lab2/build libLab2_Lib.so

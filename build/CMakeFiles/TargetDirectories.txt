@@ -1,0 +1,5 @@
+/home/janderson.linux/Lab2/build/CMakeFiles/Lab2_Lib.dir
+/home/janderson.linux/Lab2/build/CMakeFiles/Lab2.dir
+/home/janderson.linux/Lab2/build/CMakeFiles/zip.dir
+/home/janderson.linux/Lab2/build/CMakeFiles/edit_cache.dir
+/home/janderson.linux/Lab2/build/CMakeFiles/rebuild_cache.dir
