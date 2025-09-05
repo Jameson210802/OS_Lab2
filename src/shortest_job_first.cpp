@@ -15,6 +15,20 @@ namespace cse4733
     void shortest_job_first::run(std::vector<std::shared_ptr<cse4733::IProcess>> &processes)
     {
         int completion_time = 0;
+
+
+        operator();
+
+        for (int i =0; i < processes.size(); i++)
+        {
+            processes[i]->set_completion_time( processes[i]->get_burst_time()); //TODO add current time to burst
+
+            processes[i]->set_turnaround_time(processes[i]->get_completion_time() - processes[i]->get_arrival_time());
+
+            processes[i]->set_waiting_time(processes[i]->get_completion_time() - processes[i]->get_burst_time());
+
+            processes[i]->set_completion_time(processes[i]->get_completion_time() + processes[i]->get_burst_time());
+        }
         
         // TODO:
         // Sort processes by using the shortest job first comparator

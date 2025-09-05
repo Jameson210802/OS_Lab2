@@ -4,9 +4,20 @@
 
 namespace cse4733 {
 
-void first_come_first_served::run(std::vector<std::shared_ptr<cse4733::IProcess>>& processes)
+void first_come_first_served::run(std::vector<std::shared_ptr<cse4733::IProcess>>&processes)
 {
     int completion_time = 0;
+    int current_time = 0; 
+   
+
+    for(int i = 0; i < processes.size(); ++i)
+    {
+        //processes[i]->get_burst_time();
+        processes[i]->set_completion_time(processes[i]->get_burst_time() + current_time);
+        processes[i]->set_turnaround_time(processes[i]->get_completion_time() - processes[i]->get_arrival_time());
+        processes[i]->set_waiting_time(processes[i]->get_turnaround_time() - processes[i]->get_burst_time());
+        current_time += processes[i]->get_burst_time();
+    }
         // TODO:
         //
         // Set 'current_time' to zero. It will keep track of the elapsed process execution times.

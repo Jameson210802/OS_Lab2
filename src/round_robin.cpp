@@ -9,6 +9,33 @@ void round_robin::run(std::vector<std::shared_ptr<cse4733::IProcess>> &processes
     {
         int completion_time = 0;
 
+        int process_num = processes.size();
+
+       std::queue<std::shared_ptr<cse4733::IProcess>> readyQueue;
+
+        for (int i = 0; i < process_num; i++)
+        {
+            readyQueue.push(processes[i]);
+        }
+
+        while(!readyQueue.empty())
+        {
+            std::shared_ptr<cse4733::IProcess> process_current = readyQueue.front();
+
+            int time_remaining = process_current->get_remaining_time();
+
+            if(time_remaining < quantum)
+            {
+                //do code stuff
+            }
+            else
+            {
+                //do other code stuff 
+            
+            }
+
+        }
+
         // TODO:
         //  Get number of processes
         //  Fill the ready queue
